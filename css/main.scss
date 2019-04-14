@@ -1,3 +1,6 @@
+
+
+
 /*SASS Map Example. This allows us to hvae multiple colors seperated by a comma*/
 /*Dollar sign on the object now the key value.*/
 $colors: (
@@ -5,8 +8,16 @@ $colors: (
     accent: #FFF6BB
 );
 
+body, html {
+    height: 100%;
+
+}
+
 body{
-    background-color:map-get($colors, primary);
+    font-family: 'Montserrat';
+    margin:0;
+    //Example of Accessing maps
+    // background-color:map-get($colors, primary);
 }
 
 /*SASS Variable*/
