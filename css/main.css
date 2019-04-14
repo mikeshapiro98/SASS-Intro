@@ -1,0 +1,9 @@
+/*SASS Map Example. This allows us to hvae multiple colors seperated by a comma*/
+/*Dollar sign on the object now the key value.*/
+body {
+  background-color: #005DFF;
+}
+
+/*SASS Variable*/
+/*$mycolor: #005DFF;*/
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,17 @@
+/*SASS Map Example. This allows us to hvae multiple colors seperated by a comma*/
+/*Dollar sign on the object now the key value.*/
+$colors: (
+    primary: #005DFF,
+    accent: #FFF6BB
+);
+
+body{
+    background-color:map-get($colors, primary);
+}
+
+/*SASS Variable*/
+/*$mycolor: #005DFF;*/
+
+// body{
+//     background-color: $mycolor; 
+// }
