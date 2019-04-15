@@ -8,8 +8,11 @@
 
 /*SASS Map Example. This allows us to hvae multiple colors seperated by a comma*/
 /*Dollar sign on the object now the key value.*/
+//Lighten() is in CSS already 
 $colors: (
     primary: #005DFF,
+    primary-light: lighten(#005DFF, 40%),
+    primary-dark: darken(#005DFF, 40%),
     accent: #FFF6BB
 );
 
@@ -21,6 +24,8 @@ $borders: 15px;
 @function color($color-name){
     @return map-get($colors, $color-name)
 };
+
+//Sass responsivness
 
 body, html {
     height: 100%;
@@ -49,10 +54,10 @@ body{
         text-decoration: none;
         padding: $padding;
         display: block;
-        text-decoration: uppercase;
+        text-transform: uppercase;
     }
 }
-
+//NOTE ALL THE NESTED ELELMENTS THAT SASS ALLOWS FOR. 
 main{
     section#card {
         background:#fff;
@@ -66,6 +71,54 @@ main{
             list-style-type: none;
             margin:0;
             padding: 0;
+
+            li{
+                margin-bottom:10px;
+                span{
+                    position: absolute;
+                  //  content: ' '; 
+                    width: 30px;
+                    height: 30px;
+                    //HERE WE CREATE A NEW COLOR ABOVE
+                    background-color: color(primary-light);
+                    border-radius: 50%;
+                    margin-right: 10px; 
+                }
+                strong{
+                    display: inline-block;
+                    margin-left: max(40px);
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
+    section#primary{
+        color: #fff;
+        padding: $padding;
+        text-align: center;
+
+        h1{
+            font-size: 3em;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        p{
+            font-size: 1.4em;
+        }
+        //Making a button from CSS
+        a{
+            color:color(primary-dark);
+            border-radius: $borders;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            background-color: color(accent);
+            display:block;
+            text-align: center;
+            margin: 50px auto 0 auto;
+            padding:$padding;
         }
     }
 }
